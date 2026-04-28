@@ -5,7 +5,7 @@ function Navbar() {
           Vanisha Sharath<span className="text-teal-500">.</span>
         </span>
         <ul className="flex gap-8 list-none">
-          {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+          {['About', 'Skills', 'Projects'].map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}

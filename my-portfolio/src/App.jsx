@@ -4,7 +4,6 @@ import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
-import Contact from './components/Contact.jsx'
 
 function App() {
   useEffect(() => {
@@ -18,7 +17,6 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Contact />
       <footer className="bg-gray-900 border-t border-gray-800 text-center py-6 text-gray-600 text-sm">
         Designed & Built by Vanisha Sharath · 2025
       </footer>
