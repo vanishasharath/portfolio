@@ -1,0 +1,1 @@
+{"sessionId":"d8ed55","runId":"post-fix-v3","timestamp":1777049018331,"hypothesisId":"H1","location":"scripts/agent-debug-tailwind-bin.mjs:1","message":"Tailwind packages manifest bin check","data":{"node":"v23.1.0","tailwindcss":{"version":"3.4.19","bin":{"tailwind":"lib/cli.js","tailwindcss":"lib/cli.js"}},"@tailwindcss/cli":null}}
