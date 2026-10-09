@@ -63,19 +63,8 @@ const skills = [
       'Streamlit Cloud',
     ],
   },
-  {
-    category: 'Core CS',
-    icon: '◇',
-    items: [
-      'Data Structures & Algorithms',
-      'OOP',
-      'DBMS',
-      'Operating Systems',
-      'Computer Networks',
-    ],
-  },
+  
 ]
-
 function Skills() {
   return (
     <section
@@ -84,7 +73,7 @@ function Skills() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 text-center">
-          <p className="eyebrow mb-3">My Toolkit</p>
+        <p className="eyebrow mb-3">MY TOOLKIT</p>Ctrl + C
 
           <h2 className="section-title mb-5">
             Skills & <span className="italic text-[#bd8588]">Expertise.</span>
