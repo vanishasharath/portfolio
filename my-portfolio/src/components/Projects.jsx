@@ -80,7 +80,7 @@ const projects = [
     ],
     live: null,
     github:
-      'https://github.com/vanishasarath/ElderlyCareApp/blob/main/README.md',
+      'https://github.com/vanishasharath/ElderlyCareApp',
     note: '',
     accent: '#eee1e8',
     symbol: '❀',
