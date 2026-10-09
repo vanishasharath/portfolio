@@ -1,71 +1,105 @@
-import { useState } from 'react';
+
+import { useState } from 'react'
 
 function Hero() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText('vsharath260505@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('vsharath260505@gmail.com')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.location.href = 'mailto:vsharath260505@gmail.com'
+    }
+  }
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-b from-black via-zinc-950 to-black px-8 pt-16">
-      
-      {/* Glow Background */}
-      <div className="absolute left-1/4 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-400/20 blur-3xl" />
-      <div className="absolute right-1/4 top-1/3 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+    <section
+      id="home"
+      className="floral-pattern relative flex min-h-screen scroll-mt-20 items-center overflow-hidden px-6 pb-16 pt-28 md:px-12"
+    >
+      {/* Decorative botanical-inspired details */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-16 top-32 h-64 w-64 rounded-full border border-[#e9c9c8]/60"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-8 top-40 h-48 w-48 rounded-full border border-[#d8c0b4]/50"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-28 text-6xl text-[#bd8588]/25 md:right-12 md:text-8xl"
+      >
+        ❀
+      </div>
 
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-2">
-        
-        {/* LEFT */}
-        <div className="flex justify-center">
-          <div className="group relative flex h-80 w-80 items-center justify-center rounded-3xl border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm transition-all duration-500 hover:border-teal-400 hover:shadow-2xl hover:shadow-teal-500/10">
-            
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-teal-500/10 to-cyan-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+        {/* Illustration */}
+        <div className="animate-fade-up flex justify-center">
+          <div className="relative flex aspect-square w-full max-w-[340px] items-center justify-center rounded-t-full rounded-b-[46%] border border-[#dfc4b9] bg-[#f2e2d9] shadow-[0_20px_60px_rgba(139,103,91,0.10)] md:max-w-[400px]">
+            <div className="absolute inset-4 rounded-t-full rounded-b-[46%] border border-[#fffaf6]/80" />
 
-            <span className="relative z-10 text-8xl">👩‍💻</span>
+            <div className="animate-float relative flex flex-col items-center">
+              <span className="text-8xl md:text-9xl" role="img" aria-label="Developer illustration">
+                👩🏻‍💻
+              </span>
+              <span className="mt-5 rounded-full border border-[#dfc4b9] bg-[#fffaf6]/80 px-5 py-2 text-xs tracking-[0.18em] text-[#98666a]">
+                CREATING WITH PURPOSE
+              </span>
+            </div>
+
+            <span aria-hidden="true" className="absolute left-5 top-16 text-3xl text-[#bd8588]">
+              ✿
+            </span>
+            <span aria-hidden="true" className="absolute bottom-16 right-5 text-3xl text-[#a3a994]">
+              ❋
+            </span>
+            <span aria-hidden="true" className="absolute right-8 top-10 text-2xl text-[#bd8588]/70">
+              ✧
+            </span>
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div>
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-teal-400">
+        {/* Introduction */}
+        <div className="animate-fade-up text-center md:text-left">
+          <p className="eyebrow mb-5">
             Available for Opportunities
           </p>
 
-          <h1 className="mb-5 text-5xl font-bold leading-tight text-white md:text-6xl">
-            Hi, I'm <span className="text-teal-400">Vanisha</span>
+          <h1 className="mb-6 text-5xl font-medium leading-tight tracking-tight text-[#59453f] md:text-6xl lg:text-7xl">
+            Hi, I'm
+            <br />
+            <span className="italic text-[#bd8588]">Vanisha.</span>
           </h1>
 
-          <p className="mb-8 max-w-xl text-lg leading-relaxed text-gray-400">
-            Computer Science student building AI-powered products, full-stack
-            applications, and solutions that go from idea to deployment.
+          <p className="section-description mx-auto mb-8 max-w-lg text-base md:mx-0 md:text-lg">
+            Computer Science student building AI-powered products and
+            full-stack applications that solve real problems.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="rounded-xl bg-teal-400 px-6 py-3 font-medium text-black transition-all duration-300 hover:scale-[1.03] hover:bg-teal-300"
-            >
-              View Projects
+          <div className="flex flex-wrap justify-center gap-3 md:justify-start">
+            <a href="#projects" className="btn-primary">
+              View My Work <span aria-hidden="true">↗</span>
             </a>
 
             <button
+              type="button"
               onClick={handleCopy}
-              className={`rounded-xl border px-6 py-3 font-medium transition-all duration-300 ${
-                copied
-                  ? 'border-green-500 text-green-400'
-                  : 'border-zinc-700 text-gray-300 hover:border-teal-400 hover:text-white'
-              }`}
+              className="btn-secondary"
             >
-              {copied ? '✓ Copied!' : 'Copy Email'}
+              {copied ? '✓ Email Copied!' : 'Copy Email'}
             </button>
           </div>
+
+          <p className="mt-7 text-sm text-[#9b8980]">
+            Java · Artificial Intelligence · Software Development
+          </p>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

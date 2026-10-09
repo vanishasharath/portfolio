@@ -1,0 +1,234 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #59453f;
+  background: #fbf5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --cream: #fbf5ef;
+  --ivory: #fffaf6;
+  --blush: #e9c9c8;
+  --rose: #bd8588;
+  --rose-dark: #98666a;
+  --brown: #59453f;
+  --muted: #8b7770;
+  --sage: #a3a994;
+  --line: #eadbd1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+body,
+button,
+a {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+.brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #e9c9c8;
+  color: #59453f;
+}
+
+/* Main page surfaces */
+.portfolio,
+.portfolio section {
+  color: var(--brown);
+}
+
+.portfolio {
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.portfolio section {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(
+      ellipse at 5% 15%,
+      rgba(233, 201, 200, 0.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 95% 85%,
+      rgba(213, 218, 198, 0.20),
+      transparent 30%
+    );
+}
+
+/* Botanical-inspired background texture */
+.floral-pattern {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(189, 133, 136, 0.09), transparent 35%),
+    radial-gradient(ellipse at 80% 75%, rgba(163, 169, 148, 0.12), transparent 35%);
+}
+
+/* Elegant typography */
+.eyebrow {
+  color: var(--rose-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--brown);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* Reusable buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--rose);
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  background: var(--rose);
+  color: #fffaf7;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--rose-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid #d9bdb7;
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  background: rgba(255, 250, 246, 0.8);
+  color: var(--brown);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--rose);
+}
+
+/* Gentle entrance animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grow {
+  0% { width: 20%; }
+  50% { width: 75%; }
+  100% { width: 20%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 4px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

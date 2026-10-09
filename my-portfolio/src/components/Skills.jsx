@@ -1,102 +1,149 @@
+
 const skills = [
-    {
-      category: 'Languages',
-      items: ['C', 'Java', 'React'],
-    },
-    {
-      category: 'AI & ML',
-      items: [
-        'Generative AI',
-        'LLMs',
-        'RAG',
-        'NLP',
-        'Deep Learning',
-        'Embeddings',
-        'Semantic Search',
-      ],
-    },
-    {
-      category: 'Frameworks & Tools',
-      items: [
-        'TensorFlow',
-        'Keras',
-        'NumPy',
-        'Scikit-learn',
-        'LangChain',
-        'FAISS',
-        'FastEmbed',
-      ],
-    },
-    {
-      category: 'APIs & Services',
-      items: [
-        'Groq API',
-        'Gemini API',
-        'Cohere API',
-        'Firebase',
-        'REST APIs',
-      ],
-    },
-    {
-      category: 'Dev Tools',
-      items: [
-        'Git',
-        'Docker',
-        'Streamlit',
-        'Android Studio',
-        'VS Code',
-        'Jupyter',
-      ],
-    },
-  ];
-  
-  function Skills() {
-    return (
-      <section
-        id="skills"
-        className="bg-gradient-to-b from-gray-950 via-zinc-950 to-gray-950 px-8 py-24"
-      >
-        <div className="mx-auto max-w-5xl">
-          {/* Heading */}
-          <p className="mb-3 text-center text-sm uppercase tracking-[0.35em] text-teal-400">
-            What I Work With
-          </p>
-  
-          <h2 className="mb-4 text-center text-4xl font-bold text-white md:text-5xl">
-            Skills
+  {
+    category: 'Languages',
+    icon: '✿',
+    items: ['Java', 'Python', 'HTML', 'CSS'],
+  },
+  {
+    category: 'AI & ML',
+    icon: '❋',
+    items: [
+      'Generative AI',
+      'LLMs',
+      'RAG',
+      'NLP',
+      'Deep Learning',
+      'Embeddings',
+      'Semantic Search',
+    ],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    icon: '❀',
+    items: [
+      'TensorFlow',
+      'Keras',
+      'Scikit-learn',
+      'LangChain',
+      'FAISS',
+      'FastEmbed',
+      'spaCy',
+      'NumPy',
+      'Sentence Transformers',
+    ],
+  },
+  {
+    category: 'Web & Mobile',
+    icon: '◇',
+    items: ['React', 'FastAPI', 'Streamlit', 'REST APIs', 'Android Studio'],
+  },
+  {
+    category: 'Databases',
+    icon: '❋',
+    items: ['MySQL', 'Firebase / Firestore'],
+  },
+  {
+    category: 'APIs & Services',
+    icon: '✧',
+    items: ['Groq API', 'Gemini API', 'Cohere API', 'CoinGecko API'],
+  },
+  {
+    category: 'Tools & Deployment',
+    icon: '✿',
+    items: [
+      'Git',
+      'Maven',
+      'JUnit',
+      'JDBC',
+      'Jupyter Notebook',
+      'VS Code',
+      'Vercel',
+      'Render',
+      'Streamlit Cloud',
+    ],
+  },
+  {
+    category: 'Core CS',
+    icon: '◇',
+    items: [
+      'Data Structures & Algorithms',
+      'OOP',
+      'DBMS',
+      'Operating Systems',
+      'Computer Networks',
+    ],
+  },
+]
+
+function Skills() {
+  return (
+    <section
+      id="skills"
+      className="floral-pattern scroll-mt-20 px-6 py-24 md:px-12 md:py-28"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 text-center">
+          <p className="eyebrow mb-3">My Toolkit</p>
+
+          <h2 className="section-title mb-5">
+            Skills & <span className="italic text-[#bd8588]">Expertise.</span>
           </h2>
-  
-          <p className="mx-auto mb-14 max-w-2xl text-center text-gray-400">
-            Technologies and tools I use to build intelligent applications and
-            scalable software.
+
+          <p className="section-description mx-auto max-w-2xl">
+            The languages, frameworks, and tools I use to build AI-powered
+            applications and full-stack software.
           </p>
-  
-          {/* Main Card */}
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8 backdrop-blur-sm md:p-10">
-            <div className="space-y-8">
-              {skills.map((group) => (
-                <div
-                  key={group.category}
-                  className="grid gap-4 border-b border-zinc-800 pb-6 last:border-b-0 last:pb-0 md:grid-cols-[220px_1fr]"
-                >
-                  {/* Category */}
-                  <div>
-                    <h3 className="text-sm font-medium uppercase tracking-[0.3em] text-teal-400">
-                      {group.category}
-                    </h3>
-                  </div>
-  
-                  {/* Skills Text */}
-                  <div className="text-gray-300 leading-8">
-                    {group.items.join('  •  ')}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </section>
-    );
-  }
-  
-  export default Skills;
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((group, index) => (
+            <article
+              key={group.category}
+              className="group relative overflow-hidden rounded-3xl border border-[#eadbd1] bg-[#fffaf6]/90 p-6 shadow-[0_8px_28px_rgba(139,103,91,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b5b3] hover:shadow-[0_16px_35px_rgba(189,133,136,0.10)]"
+              style={{
+                animation: `fadeUp 0.5s ease ${index * 0.07}s both`,
+              }}
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-5 -top-5 text-6xl text-[#bd8588]/10 transition-transform duration-500 group-hover:rotate-12"
+              >
+                {group.icon}
+              </div>
+
+              <div className="relative z-10">
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#f3e4df] text-xl text-[#98666a]">
+                    {group.icon}
+                  </span>
+
+                  <h3 className="font-serif text-lg font-semibold text-[#59453f]">
+                    {group.category}
+                  </h3>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-[#eadbd1] bg-[#fbf3ee] px-3 py-1.5 text-xs font-medium text-[#79655e] transition-colors duration-200 hover:border-[#bd8588] hover:bg-[#f3e2df] hover:text-[#80565a] sm:text-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-xs tracking-wide text-[#9b8980]">
+          Always learning · Always building <span className="text-[#bd8588]">✿</span>
+        </p>
+      </div>
+    </section>
+  )
+}
+
+export default Skills
